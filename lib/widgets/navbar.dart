@@ -7,15 +7,56 @@ class Navbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //The drawer when clicked will show the options available on the website
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(color:Colors.blue),
+               child: Text('Home', style:TextStyle(color: Colors.white, fontSize: 24)),
+            ),
+            ListTile(
+    leading: const Icon(Icons.home),
+    title: const Text('Home'),
+    onTap: () => Navigator.pop(context),
+  ),
+  ListTile(
+    leading: const Icon(Icons.info_outline_rounded),
+    title: const Text('About us'),
+    onTap: () => Navigator.pop(context),
+  ),
+  ListTile(
+    leading: const Icon(Icons.connect_without_contact_sharp),
+    title: const Text('Contact us'),
+    onTap: () => Navigator.pop(context),
+  ),
+  ListTile(
+    leading: const Icon(Icons.location_on_rounded),
+    title: const Text('Location'),
+    onTap: () => Navigator.pop(context),
+  ),
+  ListTile(
+    leading: const Icon(Icons.article_rounded),
+    title: const Text('Blog'),
+    onTap: () => Navigator.pop(context),
+  ),
+          ],
+        ),
+      ),
       body: CustomScrollView(
         slivers: [
            SliverAppBar(
-              title: const Text('Garage Doors Hero anddsassa gate'),
-            //You want the Home,servies, and others here and then when I scroll down they will go to the side of the logo and then when I scroll down more they will disappear
-              leading: IconButton(
-                icon: Icon(Icons.menu),
-                onPressed: () {},
-              ),
+            toolbarHeight: 150,
+            centerTitle: true,
+            // floating: true,
+            pinned: true,
+            expandedHeight:150,
+backgroundColor: const Color.fromARGB(255, 242, 241, 241),
+              title: Image.asset('assets/images/logo.webp', height: 300,),
+             
+            
+             
               actions: [
                 IconButton(
                   icon: const Icon(
@@ -51,18 +92,13 @@ class Navbar extends StatelessWidget {
                   },
                 ),
               ],
-            floating: true, //Hides the expanded height as I scroll down
-            pinned: true,
-            expandedHeight: 500.0,
             flexibleSpace: FlexibleSpaceBar(
               //Can change the background to an image, video, or even a widget
-              background: Image.network(
-                'https://media.istockphoto.com/id/172474435/photo/small-family-poses-in-front-of-new-home.jpg?s=2048x2048&w=is&k=20&c=BZ1c34VyDhur_obsHggmbm7SHg3-DzZIyuqRaGJl_2M=',
-                fit: BoxFit.contain,//Can change to where I can have it cover the entire space or fit the entire space
+       
               ),
             ), 
-            backgroundColor: const Color.fromARGB(255, 242, 241, 241),
-            ),
+           
+            // ),
           SliverList(
 delegate: SliverChildBuilderDelegate((context, index) => ListTile(
   title: Text('Item #$index'),
