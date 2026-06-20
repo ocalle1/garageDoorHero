@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_website/widgets/sticky_contact_header.dart';
 
 
 class Navbar extends StatelessWidget {
@@ -53,10 +54,8 @@ class Navbar extends StatelessWidget {
             pinned: true,
             expandedHeight:150,
 backgroundColor: const Color.fromARGB(255, 242, 241, 241),
-              title: Image.asset('assets/images/logo.webp', height: 300,),
-             
-            
-             
+              title: Image.asset('assets/images/logo.webp', height: 300,),          
+             //Contains Button for contact, license, and email
               actions: [
                 IconButton(
                   icon: const Icon(
@@ -92,53 +91,26 @@ backgroundColor: const Color.fromARGB(255, 242, 241, 241),
                   },
                 ),
               ],
-            flexibleSpace: FlexibleSpaceBar(
-              //Can change the background to an image, video, or even a widget
-       
-              ),
             ), 
-           
-            // ),
-          SliverList(
-delegate: SliverChildBuilderDelegate((context, index) => ListTile(
-  title: Text('Item #$index'),
-),
-childCount: 30,
-),
-          ),
+           SliverPersistentHeader(
+            pinned: true,
+            delegate: StickyContactHeader(),
+            ),
+
+            SliverList(
+              delegate: SliverChildBuilderDelegate(
+              (context, index) => ListTile(
+              title: Text('Item #$index'),
+            ),
+              childCount: 30,
+            ),
+            ), 
+
         ],
       ),
     );
   }
   }
-
-  // }
-
-//   @override
-//   Widget build(BuildContext context) => Drawer(
-//       child: ListView(
-//         padding: EdgeInsets.zero,
-//         children: [
-//           const DrawerHeader(
-//             decoration: BoxDecoration(
-//               color: Colors.blue,
-//             ),
-//             child: Text(
-//               'Garage Door Hero',
-//               style: TextStyle(
-//                 color: Colors.white,
-//                 fontSize: 24,
-//               ),
-//             ),
-//           ),
-
-//           ListTile(
-//             leading: const Icon(Icons.home),
-//             title: const Text('Home'),
-//             onTap: () {
-//               Navigator.pop(context);
-//             },
-//           ),
 
 //           ListTile(
 //             leading: const Icon(Icons.build),
