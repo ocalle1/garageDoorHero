@@ -1,5 +1,9 @@
+// import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:my_website/widgets/sticky_contact_header.dart';
+import 'package:my_website/data/services.dart';
+import 'package:my_website/widgets/body_container/container_1.dart';
+
 
 
 class Navbar extends StatelessWidget {
@@ -50,8 +54,8 @@ class Navbar extends StatelessWidget {
            SliverAppBar(
             toolbarHeight: 150,
             centerTitle: true,
-            // floating: true,
-            pinned: true,
+            floating: true,
+            pinned: false,
             expandedHeight:150,
 backgroundColor: const Color.fromARGB(255, 242, 241, 241),
               title: Image.asset('assets/images/logo.webp', height: 300,),          
@@ -97,61 +101,13 @@ backgroundColor: const Color.fromARGB(255, 242, 241, 241),
             delegate: StickyContactHeader(),
             ),
 
-            SliverList(
-              delegate: SliverChildBuilderDelegate(
-              (context, index) => ListTile(
-              title: Text('Item #$index'),
-            ),
-              childCount: 30,
-            ),
-            ), 
-
-        ],
-      ),
-    );
+            SliverToBoxAdapter(
+              child: CarouselContainer1(
+                imageUrls: List<String>.from(
+                  services[0]['images'] as List,)),
+            )
+// WIll be used for carousel images for the first container
+        ]
+        ));
   }
   }
-
-//           ListTile(
-//             leading: const Icon(Icons.build),
-//             title: const Text('Services'),
-//             onTap: () {
-//               Navigator.pop(context);
-//             },
-//           ),
-
-//           ListTile(
-//             leading: const Icon(Icons.info),
-//             title: const Text('About Us'),
-//             onTap: () {
-//               Navigator.pop(context);
-//             },
-//           ),
-
-//           ListTile(
-//             leading: const Icon(Icons.contact_mail),
-//             title: const Text('Contact Us'),
-//             onTap: () {
-//               Navigator.pop(context);
-//             },
-//           ),
-
-//           ListTile(
-//             leading: const Icon(Icons.location_on),
-//             title: const Text('Location'),
-//             onTap: () {
-//               Navigator.pop(context);
-//             },
-//           ),
-
-//           ListTile(
-//             leading: const Icon(Icons.article),
-//             title: const Text('Blog'),
-//             onTap: () {
-//               Navigator.pop(context);
-//             },
-//           ),
-//         ],
-//       ),
-//     );
-// }

@@ -36,7 +36,6 @@ class StickyContactHeader extends SliverPersistentHeaderDelegate {
       ),
     );
   }
-
   @override
   bool shouldRebuild(
     covariant SliverPersistentHeaderDelegate oldDelegate,
