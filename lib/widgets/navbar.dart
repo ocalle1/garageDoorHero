@@ -92,8 +92,14 @@ class Navbar extends StatelessWidget {
           ),
           SliverPersistentHeader(pinned: true, delegate: StickyContactHeader()),
 
-// Right now this controls the image, description from the container_1(First section)
+          // Container 1 -Right now this controls the image, description from the container_1(First section)
           SliverToBoxAdapter(child: ServiceSection(service: services[0])),
+
+          SliverToBoxAdapter(
+            child: CarouselContainer1(
+              imageUrls: List<String>.from(services[1]['images'] as List),
+            ),
+          ),
 
           // SliverToBoxAdapter(
           //   child: CarouselContainer1(

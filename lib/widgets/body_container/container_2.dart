@@ -3,9 +3,9 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:my_website/data/services.dart';
 
 // Contains the CarouselSlider where the images are aut sliding
-class CarouselContainer1 extends StatelessWidget {
+class CarouselContainer2 extends StatelessWidget {
   final List<String> imageUrls;
-  const CarouselContainer1({super.key, required this.imageUrls});
+  const CarouselContainer2({super.key, required this.imageUrls});
 
   @override
   Widget build(BuildContext context) {
