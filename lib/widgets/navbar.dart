@@ -95,11 +95,8 @@ class Navbar extends StatelessWidget {
           // Container 1 -Right now this controls the image, description from the container_1(First section)
           SliverToBoxAdapter(child: ServiceSection(service: services[0])),
 
-          SliverToBoxAdapter(
-            child: CarouselContainer1(
-              imageUrls: List<String>.from(services[1]['images'] as List),
-            ),
-          ),
+          // Container 2 - image could either be static or carousel (undecided)
+          SliverToBoxAdapter(child: ServiceSection(service: services[1])),
 
           // SliverToBoxAdapter(
           //   child: CarouselContainer1(

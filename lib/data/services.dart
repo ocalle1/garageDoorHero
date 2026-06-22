@@ -20,8 +20,8 @@ final services = [
     'description':
         'Your lifestyle deserves a seamless transition between outdoor and indoor living, but traditional doors can block the breeze and view, disrupting your comfort and convenience.',
     'images': [
-      'assets/images/container_2/image1_second_container.webp',
-      'assets/images/container_2/image2_second_container.webp',
+      'assets/images/image1_second_container.jpg',
+      'assets/images/image2_second_container.jpg',
     ],
   },
 ];

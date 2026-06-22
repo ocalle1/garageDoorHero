@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_website/data/services.dart';
 import 'package:my_website/widgets/body_container/container_1.dart';
 
+//Receives input for container 1,2 rom data/services.dart file (for now)
 class ServiceSection extends StatelessWidget {
   final Map service;
 
