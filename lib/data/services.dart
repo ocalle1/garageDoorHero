@@ -18,10 +18,19 @@ final services = [
   },
   {
     'description':
-        'Your lifestyle deserves a seamless transition between outdoor and indoor living, but traditional doors can block the breeze and view, disrupting your comfort and convenience.',
+        "Enjoy the perfect blend of indoor comfort and outdoor living with a Lifestyle Garage Screen Door. Let fresh air and natural light in while keeping pests out, all with a sleek design that enhances your home's appearance and functionality."
+        "At Garage Doors Hero and Gate, we provide fast, friendly, and reliable service throughout Murrieta, Menifee, Temecula, Wildomar, Lake Elsinore, and surrounding areas in Riverside, San Diego, and Orange Counties."
+        "Contact us today for a free estimate and ask about our current specials. Transform your garage into a comfortable, versatile living space with professionals you can trust."
+        "DO YOU WANT ME TO ADD A LINK LIKE THERE WAS BEFORE (https://www.garagedoorshero.com/lake-elsinore-ca-garage-screen-door-services)",
     'images': [
       'assets/images/image1_second_container.jpg',
       'assets/images/image2_second_container.jpg',
+    ],
+  },
+  {
+    'videos': [
+      'assets/videos/container3/video1_container3.mp4',
+      'assets/videos/container3/video2_container3.mp4',
     ],
   },
 ];

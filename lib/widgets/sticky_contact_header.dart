@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// controls the 2 buttons at the top of page called - Call Now and Get Quote
 class StickyContactHeader extends SliverPersistentHeaderDelegate {
   @override
   double get minExtent => 80;
@@ -16,7 +17,7 @@ class StickyContactHeader extends SliverPersistentHeaderDelegate {
     return SizedBox(
       height: maxExtent,
       child: Container(
-        color: Colors.white,
+        color: const Color.fromARGB(255, 172, 61, 61),
         child: Row(
           children: [
             Expanded(
@@ -36,10 +37,9 @@ class StickyContactHeader extends SliverPersistentHeaderDelegate {
       ),
     );
   }
+
   @override
-  bool shouldRebuild(
-    covariant SliverPersistentHeaderDelegate oldDelegate,
-  ) {
+  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) {
     return false;
   }
 }

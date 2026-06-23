@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_website/data/services.dart';
-import 'package:my_website/widgets/body_container/container_1.dart';
+import 'package:my_website/widgets/body_container/carousel_slider.dart';
 
-//Receives input for container 1,2 rom data/services.dart file (for now)
+//Receives input for container 1,2 from data/services.dart file (for now)
 class ServiceSection extends StatelessWidget {
   final Map service;
 

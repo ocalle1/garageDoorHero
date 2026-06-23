@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter_sticky_header: ^0.8.0
   sticky_headers: ^0.3.0+2
+  video_player: ^2.11.1
 
 dev_dependencies:
   flutter_test:
@@ -67,6 +68,7 @@ flutter:
   assets:
     # - assets/
     - assets/images/
+    - assets/videos/
     
     
   

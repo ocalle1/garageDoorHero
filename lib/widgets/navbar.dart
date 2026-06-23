@@ -2,8 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:my_website/widgets/sticky_contact_header.dart';
 import 'package:my_website/data/services.dart';
-import 'package:my_website/widgets/body_container/container_1.dart';
+import 'package:my_website/widgets/body_container/carousel_slider.dart';
 import 'package:my_website/widgets/body_container/service_section.dart';
+import 'package:my_website/widgets/body_container/video_player.dart';
 
 class Navbar extends StatelessWidget {
   const Navbar({super.key});
@@ -97,13 +98,10 @@ class Navbar extends StatelessWidget {
 
           // Container 2 - image could either be static or carousel (undecided)
           SliverToBoxAdapter(child: ServiceSection(service: services[1])),
-
-          // SliverToBoxAdapter(
-          //   child: CarouselContainer1(
-          //     imageUrls: List<String>.from(
-          //       services[0]['images'] as List,)),
-          // )
-          // WIll be used for carousel images for the first container
+          SliverToBoxAdapter(
+            child: SizedBox(height: 400, child: VideoPlayerScreen()),
+          ),
+          // Container 3 - videos
         ],
       ),
     );
