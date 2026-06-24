@@ -3,7 +3,6 @@
 final hero = {
   'id': 'hero',
   'type': 'hero',
-  'order': 1,
   'description':
       //title so needs to be changed - font size,bold and color
       'Professional Garage Door Repair & Service\n'
@@ -41,7 +40,15 @@ final services = [
     'description': 'Automated gate systems...',
     'title': 'Gate Openers',
   },
-
+  {
+    'id': 'work_section',
+    'type': 'video_section',
+    'title': 'See Our Work in Action',
+    'videos': [
+      'assets/videos/container3/video1_web.mp4',
+      'assets/videos/container3/video2_web.mp4',
+    ],
+  },
   {
     'id': 'repair_special',
     'type': 'special',
@@ -60,10 +67,20 @@ final services = [
   },
 ];
 //VIDEOS
-final videos = [
-  'assets/videos/container3/video1.mp4',
-  'assets/videos/container3/video2.mp4',
-];
+// final videos = [
+//   'assets/videos/container3/video1.mp4',
+//   'assets/videos/container3/video2.mp4',
+// ];
+
+final workSection = {
+  'id': 'work_section',
+  'type': 'video_section',
+  'title': 'See Our Work in Action',
+  'videos': [
+    'assets/videos/container3/video1.mp4',
+    'assets/videos/container3/video2.mp4',
+  ],
+};
 
 // SERVICES
 // final services = [

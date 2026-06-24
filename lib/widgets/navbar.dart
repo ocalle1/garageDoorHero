@@ -99,18 +99,61 @@ class Navbar extends StatelessWidget {
           SliverPersistentHeader(pinned: true, delegate: StickyContactHeader()),
 
           // Container 1
-          SliverToBoxAdapter(child: Text(hero['description'] as String)),
+          SliverToBoxAdapter(
+            child: Text(hero['description']?.toString() ?? ''),
+          ),
+
           // CONTAINER(BODY) - has all the services available
           SliverList(
             delegate: SliverChildBuilderDelegate((context, index) {
-              return ServicesSection(service: services[index]);
+              final item = services[index];
+
+              print(item['type']);
+
+              if (item['type'] == 'service' || item['type'] == 'special') {
+                return ServicesSection(service: item);
+              }
+
+              if (item['type'] == 'video_section') {
+                // final videos = List<String>.from(item['videos'] as List? ?? []);
+                final title = (item['title'] ?? '').toString();
+                final videos = (item['videos'] as List<dynamic>? ?? [])
+                    .map((e) => e.toString())
+                    .toList();
+
+                return Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        item['title']?.toString() ?? '',
+                        style: const TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+
+                      SizedBox(
+                        child: SizedBox(
+                          height: 400,
+                          child: VideoPlayerScreen(videos: videos),
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              }
+
+              return const SizedBox.shrink();
             }, childCount: services.length),
           ),
 
           //VIDEOS
-          SliverToBoxAdapter(
-            child: SizedBox(height: 400, child: VideoPlayerScreen()),
-          ),
+          // SliverToBoxAdapter(
+          //   child: SizedBox(height: 400, child: VideoPlayerScreen()),
+          // ),
         ],
       ),
     );
