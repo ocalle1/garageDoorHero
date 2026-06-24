@@ -6,19 +6,21 @@ import 'package:my_website/widgets/body_container/carousel_slider.dart';
 import 'package:my_website/widgets/body_container/service_section.dart';
 import 'package:my_website/widgets/body_container/video_player.dart';
 
+//CONTAINS the NAVBAR, SERVICES(BODY)gets data from services.dart, VIDEOS gets data from services.dart
 class Navbar extends StatelessWidget {
   const Navbar({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromRGBO(255, 255, 255, 0),
       //The drawer when clicked will show the options available on the website
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
             const DrawerHeader(
-              decoration: BoxDecoration(color: Colors.blue),
+              decoration: BoxDecoration(color: Color.fromARGB(255, 86, 4, 65)),
               child: Text(
                 'Home',
                 style: TextStyle(color: Colors.white, fontSize: 24),
@@ -60,8 +62,9 @@ class Navbar extends StatelessWidget {
             floating: true,
             pinned: false,
             expandedHeight: 150,
-            backgroundColor: const Color.fromARGB(255, 242, 241, 241),
+            backgroundColor: const Color.fromARGB(255, 234, 230, 230),
             title: Image.asset('assets/images/logo.webp', height: 300),
+
             //Contains Button for contact, license, and email
             actions: [
               IconButton(
@@ -91,17 +94,23 @@ class Navbar extends StatelessWidget {
               ),
             ],
           ),
+
+          //Contains the call and get quote button
           SliverPersistentHeader(pinned: true, delegate: StickyContactHeader()),
 
-          // Container 1 -Right now this controls the image, description from the container_1(First section)
-          SliverToBoxAdapter(child: ServiceSection(service: services[0])),
+          // Container 1
+          SliverToBoxAdapter(child: Text(hero['description'] as String)),
+          // CONTAINER(BODY) - has all the services available
+          SliverList(
+            delegate: SliverChildBuilderDelegate((context, index) {
+              return ServicesSection(service: services[index]);
+            }, childCount: services.length),
+          ),
 
-          // Container 2 - image could either be static or carousel (undecided)
-          SliverToBoxAdapter(child: ServiceSection(service: services[1])),
+          //VIDEOS
           SliverToBoxAdapter(
             child: SizedBox(height: 400, child: VideoPlayerScreen()),
           ),
-          // Container 3 - videos
         ],
       ),
     );
