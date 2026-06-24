@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:my_website/data/services.dart';
 import 'package:my_website/widgets/body_container/carousel_slider.dart';
 
-//Receives input for container 1,2 from data/services.dart file (for now)
+//Receives input for container 1,2,4 from data/services.dart file (for now)
+//Container 3 is in video_player
 class ServiceSection extends StatelessWidget {
   final Map service;
 

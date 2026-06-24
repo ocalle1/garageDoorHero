@@ -68,7 +68,7 @@ flutter:
   assets:
     # - assets/
     - assets/images/
-    - assets/videos/
+    - assets/videos/container3/
     
     
   

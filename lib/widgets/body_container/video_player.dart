@@ -9,41 +9,68 @@ class VideoPlayerScreen extends StatefulWidget {
 }
 
 class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
-  late VideoPlayerController _controller;
-  late Future<void> _initializeVideoPlayerFuture;
+  late VideoPlayerController _controller1;
+  late VideoPlayerController _controller2;
+
+  late Future<void> _initVideo1;
+  late Future<void> _initVideo2;
 
   @override
   void initState() {
     super.initState();
 
-    _controller = VideoPlayerController.asset(
-      'assets/videos/container3/video1_container3.mp4',
+    _controller1 = VideoPlayerController.asset(
+      'assets/videos/container3/video1_web.mp4',
     );
 
-    _initializeVideoPlayerFuture = _controller.initialize();
+    _controller2 = VideoPlayerController.asset(
+      'assets/videos/container3/video2_web.mp4',
+    );
 
-    _initializeVideoPlayerFuture.then((_) {
-      setState(() {});
-      _controller.play();
-      _controller.setLooping(true);
+    _initVideo1 = _controller1.initialize().then((_) async {
+      await _controller1.setVolume(0);
+      await _controller1.setLooping(true);
+      await _controller1.play();
+    });
+
+    _initVideo2 = _controller2.initialize().then((_) async {
+      await _controller2.setVolume(0);
+      await _controller2.setLooping(true);
+      await _controller2.play();
     });
   }
 
   @override
   void dispose() {
-    _controller.dispose();
+    _controller1.dispose();
+    _controller2.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: _initializeVideoPlayerFuture,
+      future: Future.wait([_initVideo1, _initVideo2]),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
-          return AspectRatio(
-            aspectRatio: _controller.value.aspectRatio,
-            child: VideoPlayer(_controller),
+          return Row(
+            children: [
+              Expanded(
+                child: AspectRatio(
+                  aspectRatio: _controller1.value.aspectRatio,
+                  child: VideoPlayer(_controller1),
+                ),
+              ),
+
+              const SizedBox(width: 20),
+
+              Expanded(
+                child: AspectRatio(
+                  aspectRatio: _controller2.value.aspectRatio,
+                  child: VideoPlayer(_controller2),
+                ),
+              ),
+            ],
           );
         }
 
