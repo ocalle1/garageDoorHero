@@ -1,5 +1,6 @@
 // import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:my_website/widgets/footer/footer.dart';
 import 'package:my_website/widgets/sticky_contact_header.dart';
 import 'package:my_website/data/services.dart';
 import 'package:my_website/widgets/body_container/carousel_slider.dart';
@@ -151,6 +152,7 @@ class Navbar extends StatelessWidget {
             }, childCount: services.length),
           ),
           SliverToBoxAdapter(child: CallToActionSection(data: callToAction)),
+          SliverToBoxAdapter(child: FooterSection(data: footerSection)),
           // },
         ],
       ),

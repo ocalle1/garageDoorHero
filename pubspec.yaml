@@ -68,6 +68,7 @@ flutter:
   assets:
     # - assets/
     - assets/images/
+    - assets/images/footer_images/
     - assets/images/homepage_container4/
     - assets/images/services/
     - assets/videos/container3/

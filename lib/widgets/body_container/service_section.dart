@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_website/data/services.dart';
+// import 'package:my_website/data/services.dart';
 import 'package:my_website/widgets/body_container/carousel_slider.dart';
 
 // Contains services and "why chooese us"

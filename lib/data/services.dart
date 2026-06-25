@@ -84,3 +84,22 @@ final callToAction = {
       "Call us now for an immediate estimate or emergency repair.",
   'trustBar': ['Available 24/7', 'Same-day repairs', 'Fully insured'],
 };
+//Footer
+final footerSection = {
+  'id': 'footer_section',
+  // 'type': 'footer_section',
+  'brand': {
+    'image': 'assets/images/logo.webp',
+    'tagline': 'Professional garage door repair and service available 24/7.',
+  },
+  'links': {
+    'title': 'Quick Links',
+    'items': ['Services', 'About Us', 'Contact'],
+  },
+  'contact': {
+    'title': 'Contact',
+    'phone': '951-498-7958',
+    'email': 'garagedoorshero@gmail.com',
+    'availability': 'Available 24/7 for emergencies',
+  },
+};
