@@ -5,6 +5,7 @@ import 'package:my_website/data/services.dart';
 import 'package:my_website/widgets/body_container/carousel_slider.dart';
 import 'package:my_website/widgets/body_container/service_section.dart';
 import 'package:my_website/widgets/body_container/video_player.dart';
+import 'package:my_website/widgets/body_container/call_to_action_section.dart';
 
 //CONTAINS the NAVBAR, SERVICES(BODY)gets data from services.dart, VIDEOS gets data from services.dart
 class Navbar extends StatelessWidget {
@@ -108,13 +109,12 @@ class Navbar extends StatelessWidget {
             delegate: SliverChildBuilderDelegate((context, index) {
               final item = services[index];
 
-              print(item['type']);
+              // print(item['type']);
 
               if (item['type'] == 'service' || item['type'] == 'special') {
-                // return ServicesSection(service: item);
                 return ServicesSection(service: item, index: index);
               }
-
+              // displays the 2 videos on home page
               if (item['type'] == 'video_section') {
                 // final videos = List<String>.from(item['videos'] as List? ?? []);
                 final title = (item['title'] ?? '').toString();
@@ -150,11 +150,8 @@ class Navbar extends StatelessWidget {
               return const SizedBox.shrink();
             }, childCount: services.length),
           ),
-
-          //VIDEOS
-          // SliverToBoxAdapter(
-          //   child: SizedBox(height: 400, child: VideoPlayerScreen()),
-          // ),
+          SliverToBoxAdapter(child: CallToActionSection(data: callToAction)),
+          // },
         ],
       ),
     );
