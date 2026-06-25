@@ -25,6 +25,7 @@ final services = [
     'type': 'service',
     'title': 'Commercial Garage Doors',
     'description': 'High-performance doors for warehouses...',
+    'images': ['assets/images/services/commercial_door.jpeg'],
   },
 
   {
@@ -32,6 +33,7 @@ final services = [
     'type': 'service',
     'title': 'Garage Screen Doors',
     'description': 'Fresh air while keeping pests out...',
+    'images': ['assets/images/services/screen_door.jpeg'],
   },
 
   {
@@ -39,6 +41,7 @@ final services = [
     'type': 'service',
     'description': 'Automated gate systems...',
     'title': 'Gate Openers',
+    'images': ['assets/images/services/gate_opener.jpeg'],
   },
   {
     'id': 'work_section',

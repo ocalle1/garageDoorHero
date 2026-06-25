@@ -18,8 +18,6 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
   void initState() {
     super.initState();
 
-    // print("VIDEOS RECEIVED: ${widget.videos}");
-
     _controllers = widget.videos
         .map((path) => VideoPlayerController.asset(path))
         .toList();
