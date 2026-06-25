@@ -111,7 +111,8 @@ class Navbar extends StatelessWidget {
               print(item['type']);
 
               if (item['type'] == 'service' || item['type'] == 'special') {
-                return ServicesSection(service: item);
+                // return ServicesSection(service: item);
+                return ServicesSection(service: item, index: index);
               }
 
               if (item['type'] == 'video_section') {
