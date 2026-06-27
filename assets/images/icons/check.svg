@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <!-- Blue circle -->
+  <circle cx="12" cy="12" r="10" fill="#1E88E5"></circle>
+
+  <!-- White check -->
+  <path d="M6 12l4 4 8-8" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>

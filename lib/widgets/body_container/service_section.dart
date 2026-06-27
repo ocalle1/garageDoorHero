@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 // import 'package:my_website/data/services.dart';
 import 'package:my_website/widgets/body_container/carousel_slider.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:my_website/widgets/bullet_list_home.dart';
 
 // Contains services and "why chooese us"
 class ServicesSection extends StatelessWidget {
@@ -32,16 +34,47 @@ class ServicesSection extends StatelessWidget {
         children: [
           Text(
             service['title'] ?? '',
-            style: const TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+            style: const TextStyle(
+              fontSize: 36,
+              height: 1.2,
+              fontWeight: FontWeight.w900,
+            ),
           ),
           const SizedBox(height: 8),
           Text(
             service['description'] ?? '',
-            style: const TextStyle(fontSize: 16, height: 1.4),
+            style: const TextStyle(
+              fontSize: 18,
+              height: 1.625,
+              fontWeight: FontWeight.w400,
+            ),
           ),
+          const SizedBox(height: 16),
+
+          if (bullets.isNotEmpty)
+            ...bullets.map(
+              (item) => Padding(
+                padding: const EdgeInsets.only(bottom: 8),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SvgPicture.asset(
+                      'assets/images/icons/check.svg',
+                      width: 18,
+                      height: 18,
+                    ),
+
+                    const SizedBox(width: 8),
+
+                    Expanded(child: Text(item)),
+                  ],
+                ),
+              ),
+            ),
         ],
       ),
     );
+
     //BODY SERVICES - Images
     final imageWidget = Expanded(child: CarouselContainer1(imageUrls: images));
 
@@ -60,7 +93,8 @@ class ServicesSection extends StatelessWidget {
                   Text(
                     service['title'] ?? '',
                     style: const TextStyle(
-                      fontSize: 20,
+                      fontSize: 30,
+                      height: 1.2,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -69,7 +103,7 @@ class ServicesSection extends StatelessWidget {
 
                   Text(
                     service['description'] ?? '',
-                    style: const TextStyle(fontSize: 56),
+                    style: const TextStyle(fontSize: 18),
                   ),
 
                   const SizedBox(height: 16),
@@ -85,14 +119,7 @@ class ServicesSection extends StatelessWidget {
 
                   const SizedBox(height: 8),
 
-                  ...bullets
-                      .skip(1)
-                      .map(
-                        (item) => Padding(
-                          padding: const EdgeInsets.only(bottom: 6),
-                          child: Text("• $item"),
-                        ),
-                      ),
+                  BulletList(bullets: bullets.skip(1).toList()),
                 ],
               ),
             ),

@@ -1,22 +1,31 @@
 //Home Page
 
-final hero = {
+final heroIntroduction = {
   'id': 'hero',
   'type': 'hero',
-  'description':
-      //title so needs to be changed - font size,bold and color
-      'Professional Garage Door Repair & Service\n'
-      "Fast, reliable garage door repair available 24/7. Emergency repairs, installation, and maintenance for residential and commercial properties\n"
-      "✓ Licensed & Insured | ✓ Same-Day Service Available | ✓ 30+ Years Experience",
+  'title': 'Professional Garage Door Repair & Service',
+  'descriptionMain':
+      'Fast, reliable garage door repair available 24/7. Emergency repairs, installation, and maintenance for residential and commercial properties',
+
+  'descriptionHighlights':
+      '✓ Licensed & Insured | ✓ Same-Day Service Available | ✓ 30+ Years Experience',
 };
 
 //NEW Updated SERVICES layout
 final services = [
+  {'id': 'services_header', 'type': 'section_header', 'title': 'Our Services'},
   {
     'id': 'residential',
     'type': 'service',
     'title': 'Residential Garage Doors',
-    'description': 'From routine maintenance to emergency repairs...',
+    'description':
+        "From routine maintenance to emergency repairs, we keep your home's garage door running smoothly. Our team handles spring replacements, panel repairs, opener fixes, and more.",
+    'bullets': [
+      'Spring replacement & repairs',
+      'Opener installation & repair',
+      'Panel & cable replacement',
+      'Regular maintenance plans',
+    ],
     'images': ['assets/images/image1.jpg', 'assets/images/image2.jpg'],
   },
 
@@ -24,24 +33,60 @@ final services = [
     'id': 'commercial',
     'type': 'service',
     'title': 'Commercial Garage Doors',
-    'description': 'High-performance doors for warehouses...',
+    'description':
+        'Specializing in high-performance doors for warehouses, loading docks, and commercial facilities. We understand the importance of reliability and quick repairs.',
     'images': ['assets/images/services/commercial_door.jpeg'],
+    'bullets': [
+      'High-speed door installation',
+      '24/7 emergency repairs',
+      'Preventive maintenance contracts',
+      'Fleet garage door solutions',
+    ],
   },
 
   {
     'id': 'screen_doors',
     'type': 'service',
     'title': 'Garage Screen Doors',
-    'description': 'Fresh air while keeping pests out...',
+    'description':
+        'Stay comfortable while enjoying fresh air and natural light. Our garage screen doors offer ventilation without compromising security or style.',
     'images': ['assets/images/services/screen_door.jpeg'],
+    'bullets': [
+      'Custom screen door installation',
+      'Retractable screen options',
+      'Repair and maintenance',
+      'Pet-resistant screening available',
+    ],
   },
 
   {
     'id': 'gate_openers',
     'type': 'service',
     'title': 'Gate Openers',
-    'description': 'Automated gate systems...',
+    'description':
+        'Professional gate opener installation and repair for residential and commercial properties. Enhance security and convenience with reliable automated gate systems.',
     'images': ['assets/images/services/gate_opener.jpeg'],
+    'bullets': [
+      'Sliding and swing gate openers',
+      'Keypad and remote control systems',
+      'Emergency manual override installation',
+      'Repair and troubleshooting service',
+    ],
+  },
+  {
+    'id': 'fence',
+    'type': 'service',
+    'title': 'Fence Services',
+    'description':
+        "Complete fence installation, repair, and maintenance services. We work with all fence types and materials to enhance your property's security and curb appeal.",
+    'images': ['assets/images/services/fence_door.jpeg'],
+
+    'bullets': [
+      'Fence installation and replacement',
+      'Repair and post replacement',
+      'Wood, vinyl, and metal fencing',
+      'Staining and maintenance programs',
+    ],
   },
   {
     'id': 'work_section',
@@ -56,22 +101,16 @@ final services = [
   {
     'id': 'repair_special',
     'type': 'special',
-    // 'headline': 'Tired of dealing with a malfunctioning garage door?',
-    // 'title': 'Garage Door Repair',r
-    // 'description':
-    // 'Tired of dealing with a malfunctioning garage door? Garage Doors Hero and Gate provides fast, reliable service...',
     'bullets': [
       'Why Choose Us',
-      '✓ Live operators available 24/7 to answer all calls',
-      '✓ Evening and weekend appointments available at no extra charge',
-      '✓ Emergency garage door service when you need it most',
-      '✓ All work is fully guaranteed for your peace of mind',
-      '✓ We accept all major credit cards for convenience',
-      '✓ Professionally trained and experienced technicians',
-      '✓ We repair and service all major garage door brands',
+      ' Live operators available 24/7 to answer all calls',
+      ' Evening and weekend appointments available at no extra charge',
+      ' Emergency garage door service when you need it most',
+      ' All work is fully guaranteed for your peace of mind',
+      ' We accept all major credit cards for convenience',
+      ' Professionally trained and experienced technicians',
+      ' We repair and service all major garage door brands',
     ],
-    // 'cta': 'Contact Garage Doors Hero and Gate today...',
-    // 'images': ['assets/images/homepage_container4/image1_container4.jpg'],
   },
 ];
 // CALL TO ACTION SECTION
