@@ -20,7 +20,7 @@ class CarouselContainer1 extends StatelessWidget {
         height: 650,
         viewportFraction: 0.9,
         enlargeCenterPage: true,
-        autoPlay: true,
+        // autoPlay: true,
       ),
     );
   }
