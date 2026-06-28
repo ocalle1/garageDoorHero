@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-// import 'package:my_website/data/services.dart';
-import 'package:my_website/widgets/body_container/carousel_slider.dart';
+import 'package:my_website/data/services.dart';
+import 'package:my_website/widgets/carousel_slider.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:my_website/widgets/bullet_list_home.dart';
 
@@ -34,10 +34,11 @@ class ServicesSection extends StatelessWidget {
         children: [
           Text(
             service['title'] ?? '',
-            style: const TextStyle(
-              fontSize: 36,
+            style: TextStyle(
+              fontSize: 30,
               height: 1.2,
-              fontWeight: FontWeight.w900,
+              fontWeight: FontWeight.bold,
+              color: Colors.grey[900],
             ),
           ),
           const SizedBox(height: 8),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:my_website/data/services.dart';
 
 // Contains the CarouselSlider where the images are auto sliding
 class CarouselContainer1 extends StatelessWidget {

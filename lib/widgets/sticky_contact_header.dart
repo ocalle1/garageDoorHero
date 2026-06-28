@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_website/widgets/button_widget/buttons.dart';
+import 'package:my_website/widgets/buttons.dart';
 
 // controls the 2 buttons at the top of Home page called - Call Now and Get Quote
 class StickyContactHeader extends SliverPersistentHeaderDelegate {

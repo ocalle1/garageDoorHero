@@ -1,12 +1,14 @@
 // import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:my_website/widgets/footer/footer.dart';
+import 'package:my_website/widgets/footer.dart';
+import 'package:my_website/widgets/homepage_widgets/services_title.dart';
 import 'package:my_website/widgets/sticky_contact_header.dart';
 import 'package:my_website/data/services.dart';
-import 'package:my_website/widgets/body_container/carousel_slider.dart';
-import 'package:my_website/widgets/body_container/service_section.dart';
-import 'package:my_website/widgets/body_container/video_player.dart';
-import 'package:my_website/widgets/body_container/call_to_action_section.dart';
+import 'package:my_website/widgets/carousel_slider.dart';
+import 'package:my_website/body_container/service_section.dart';
+import 'package:my_website/widgets/video_player.dart';
+import 'package:my_website/body_container/call_to_action_section.dart';
+import 'package:my_website/widgets/homepage_widgets/heroIntro.dart';
 
 //CONTAINS the NAVBAR, SERVICES(BODY)gets data from services.dart, VIDEOS gets data from services.dart
 class Navbar extends StatelessWidget {
@@ -96,116 +98,25 @@ class Navbar extends StatelessWidget {
               ),
             ],
           ),
-
-          //Contains the call and get quote button
-          // SliverPersistentHeader(pinned: true, delegate: StickyContactHeader()),
-
-          // Container 1 - under header - title, description-"Fast,reliable garage door...", 3 check marks and button
-          // SliverToBoxAdapter(
-          //   child: Padding(
-          //     padding: const EdgeInsets.all(16),
-          //     child: Column(
-          //       crossAxisAlignment: CrossAxisAlignment.start,
-          //       children: [
-          //         Center(
-          //           child: ConstrainedBox(
-          //             constraints: const BoxConstraints(maxWidth: 900),
-
-          //             child: Padding(
-          //               padding: const EdgeInsets.only(bottom: 24),
-          //               child: Text(
-          //                 hero['title']?.toString() ?? '',
-          //                 textAlign: TextAlign.center,
-          //                 style: const TextStyle(
-          //                   color: Color.fromRGBO(21, 87, 209, 1.0),
-
-          //                   fontSize: 60,
-          //                   fontWeight: FontWeight.w900,
-          //                 ),
-          //               ),
-          //             ),
-          //           ),
-          //         ),
-
-          //         const SizedBox(height: 8),
-
-          //         Center(
-          //           child: ConstrainedBox(
-          //             constraints: const BoxConstraints(maxWidth: 900),
-          //             child: Column(
-          //               children: [
-          //                 Text(
-          //                   hero['descriptionMain']?.toString() ?? '',
-          //                   textAlign: TextAlign.center,
-          //                   style: const TextStyle(
-          //                     color: Color.fromRGBO(75, 85, 99, 0.9),
-          //                     fontSize: 23,
-          //                     height: 2.0,
-          //                     fontWeight: FontWeight.w900,
-          //                   ),
-          //                 ),
-
-          //                 const SizedBox(height: 12),
-          //                 SliverPersistentHeader(
-          //                   pinned: true,
-          //                   delegate: StickyContactHeader(),
-          //                 ),
-
-          //                 Text(
-          //                   hero['descriptionHighlights']?.toString() ?? '',
-          //                   textAlign: TextAlign.center,
-          //                   style: const TextStyle(
-          //                     color: Color.fromRGBO(105, 114, 128, 0.9),
-
-          //                     fontSize: 18,
-          //                     fontWeight: FontWeight.w400,
-          //                   ),
-          //                 ),
-          //               ],
-          //             ),
-          //           ),
-          //         ),
-          //       ],
-          //     ),
-          //   ),
-          // ),
+          // heroIntrodution CONTAINER
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.all(16),
               child: Column(
                 children: [
                   Center(
-                    child: ConstrainedBox(
-                      constraints: const BoxConstraints(maxWidth: 900),
-                      child: Padding(
-                        padding: const EdgeInsets.only(bottom: 24),
-                        child: Text(
-                          heroIntroduction['title']?.toString() ?? '',
-                          textAlign: TextAlign.center,
-                          style: const TextStyle(
-                            color: Color.fromRGBO(21, 87, 209, 1),
-                            fontSize: 60,
-                            fontWeight: FontWeight.w900,
-                          ),
-                        ),
-                      ),
+                    child: HeroIntroTitle(
+                      text: heroIntroduction['title']?.toString() ?? '',
                     ),
                   ),
+
                   const SizedBox(height: 8),
 
                   Center(
-                    child: ConstrainedBox(
-                      constraints: const BoxConstraints(maxWidth: 900),
-                      child: Text(
-                        heroIntroduction['descriptionMain']?.toString() ?? '',
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          color: Color.fromRGBO(75, 85, 99, .9),
-                          fontSize: 23,
-                          height: 2,
-                          fontWeight: FontWeight.w900,
-                        ),
-                      ),
+                    // Fast, reliable garage door... - text under Professiona title
+                    child: HeroIntroText(
+                      text:
+                          heroIntroduction['descriptionMain']?.toString() ?? '',
                     ),
                   ),
                 ],
@@ -216,28 +127,15 @@ class Navbar extends StatelessWidget {
           //// 2 button - call and get quote
           SliverPersistentHeader(pinned: true, delegate: StickyContactHeader()),
 
+          // 3 check marks
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Center(
-                child: ConstrainedBox(
-                  constraints: const BoxConstraints(maxWidth: 900),
-                  child: Column(
-                    children: [
-                      const SizedBox(height: 12),
-
-                      Text(
-                        heroIntroduction['descriptionHighlights']?.toString() ??
-                            '',
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          color: Color.fromRGBO(105, 114, 128, .9),
-                          fontSize: 18,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ],
-                  ),
+                child: HeroIntroChecks(
+                  text:
+                      heroIntroduction['descriptionHighlights']?.toString() ??
+                      '',
                 ),
               ),
             ),
@@ -249,19 +147,9 @@ class Navbar extends StatelessWidget {
               final item = services[index];
 
               // "Our Services" Text only(Banner)
-              if (item['type'] == 'section_header') {
-                return Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Text(
-                    item['title']?.toString() ?? '',
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      color: Color.fromRGBO(17, 24, 39, 1.0),
-                      fontSize: 39,
-                      fontWeight: FontWeight.w900,
-                    ),
-                  ),
-                );
+              switch (item['type']) {
+                case 'section_header':
+                  return ServicesTitle(text: item['title']?.toString() ?? '');
               }
 
               //Dispays Services available
@@ -277,17 +165,19 @@ class Navbar extends StatelessWidget {
                     .toList();
 
                 return Padding(
-                  padding: const EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(46),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      //VIDEO CSS
                       Text(
                         item['title']?.toString() ?? '',
                         style: const TextStyle(
-                          fontSize: 22,
+                          fontSize: 74,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
+
                       const SizedBox(height: 16),
 
                       SizedBox(

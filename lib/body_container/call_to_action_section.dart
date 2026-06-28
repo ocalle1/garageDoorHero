@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// Contains input from services.dart data for CALL TO ACTION SECTION
+// HomePage bottom - Contains input from services.dart data for CALL TO ACTION SECTION
 class CallToActionSection extends StatelessWidget {
   final Map data;
 
