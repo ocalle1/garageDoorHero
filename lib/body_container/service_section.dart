@@ -32,22 +32,31 @@ class ServicesSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            service['title'] ?? '',
-            style: TextStyle(
-              fontSize: 30,
-              height: 1.2,
-              fontWeight: FontWeight.bold,
-              color: Colors.grey[900],
+          Padding(
+            padding: const EdgeInsetsGeometry.only(bottom: 24),
+            child: Text(
+              service['title'] ?? '',
+              style: TextStyle(
+                fontSize: 30,
+                height: 1.6,
+                fontWeight: FontWeight.bold,
+                color: Colors.grey[900],
+              ),
             ),
           ),
+
           const SizedBox(height: 8),
-          Text(
-            service['description'] ?? '',
-            style: const TextStyle(
-              fontSize: 18,
-              height: 1.625,
-              fontWeight: FontWeight.w400,
+          Padding(
+            padding: const EdgeInsets.only(bottom: 24),
+            child: Text(
+              service['description'] ?? '',
+              style: const TextStyle(
+                fontSize: 20,
+                color: Color.fromARGB(255, 121, 120, 120),
+
+                height: 1.6,
+                fontWeight: FontWeight.w400,
+              ),
             ),
           ),
           const SizedBox(height: 16),
