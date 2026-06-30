@@ -4,15 +4,22 @@ import 'package:my_website/widgets/footer.dart';
 import 'package:my_website/widgets/homepage_widgets/services_title.dart';
 import 'package:my_website/widgets/sticky_contact_header.dart';
 import 'package:my_website/data/services.dart';
-import 'package:my_website/widgets/carousel_slider.dart';
-import 'package:my_website/body_container/service_section.dart';
-import 'package:my_website/widgets/video_player.dart';
 import 'package:my_website/body_container/call_to_action_section.dart';
 import 'package:my_website/widgets/homepage_widgets/heroIntro.dart';
+import 'package:my_website/widgets/homepage_widgets/cards/service_card.dart';
 
 //CONTAINS the NAVBAR, SERVICES(BODY)gets data from services.dart, VIDEOS gets data from services.dart
 class Navbar extends StatelessWidget {
   const Navbar({super.key});
+
+  String get headerTitle {
+    final item = services.firstWhere(
+      (e) => e['type'] == 'section_header',
+      orElse: () => {'title': 'Our Services'},
+    );
+
+    return item['title']?.toString() ?? 'Our Services';
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -141,59 +148,62 @@ class Navbar extends StatelessWidget {
             ),
           ),
 
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 24, bottom: 12),
+              child: Center(child: ServicesTitle(text: headerTitle)),
+            ),
+          ),
+
           // CONTAINER(BODY) - has all the services available
-          SliverList(
-            delegate: SliverChildBuilderDelegate((context, index) {
-              final item = services[index];
+          SliverPadding(
+            padding: const EdgeInsets.all(24),
+            sliver: SliverLayoutBuilder(
+              builder: (context, constraints) {
+                final width = constraints.crossAxisExtent;
 
-              // "Our Services" Text only(Banner)
-              switch (item['type']) {
-                case 'section_header':
-                  return ServicesTitle(text: item['title']?.toString() ?? '');
-              }
+                int columns;
 
-              //Dispays Services available
-              if (item['type'] == 'service' || item['type'] == 'special') {
-                return ServicesSection(service: item, index: index);
-              }
-              // displays the 2 videos on home page
-              if (item['type'] == 'video_section') {
-                // final videos = List<String>.from(item['videos'] as List? ?? []);
-                final title = (item['title'] ?? '').toString();
-                final videos = (item['videos'] as List<dynamic>? ?? [])
-                    .map((e) => e.toString())
+                if (width >= 1100) {
+                  columns = 4; // desktop
+                } else if (width >= 700) {
+                  columns = 2; // tablet
+                } else {
+                  columns = 1; // phone
+                }
+
+                final serviceItems = services
+                    .where((item) => item['type'] == 'service')
                     .toList();
 
-                return Padding(
-                  padding: const EdgeInsets.all(46),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      //VIDEO CSS
-                      Text(
-                        item['title']?.toString() ?? '',
-                        style: const TextStyle(
-                          fontSize: 74,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-
-                      const SizedBox(height: 16),
-
-                      SizedBox(
-                        child: SizedBox(
-                          height: 400,
-                          child: VideoPlayerScreen(videos: videos),
-                        ),
-                      ),
-                    ],
+                return SliverGrid(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: columns,
+                    crossAxisSpacing: 24,
+                    mainAxisSpacing: 24,
+                    childAspectRatio: 0.8, // controls height consistency
                   ),
-                );
-              }
+                  delegate: SliverChildBuilderDelegate((context, index) {
+                    final item = serviceItems[index];
 
-              return const SizedBox.shrink();
-            }, childCount: services.length),
+                    return SizedBox(
+                      // height: double.infinity,
+                      child: ServiceCard(
+                        image: item['image']?.toString() ?? '',
+                        title: item['title']?.toString() ?? '',
+                        description: item['description']?.toString() ?? '',
+                        bullets: List<String>.from(item['bullets'] as List),
+                        onPressed: () {
+                          print("Clicked: ${item['title']}");
+                        },
+                      ),
+                    );
+                  }, childCount: serviceItems.length),
+                );
+              },
+            ),
           ),
+
           SliverToBoxAdapter(child: CallToActionSection(data: callToAction)),
           SliverToBoxAdapter(child: FooterSection(data: footerSection)),
         ],

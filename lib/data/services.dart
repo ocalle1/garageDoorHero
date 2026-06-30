@@ -3,7 +3,7 @@
 final heroIntroduction = {
   'id': 'hero',
   'type': 'hero',
-  'title': 'Professional Garage Door Repair & Service',
+  'title': 'Professional Garage Doors & Gate Services',
   'descriptionMain':
       'Fast, reliable garage door repair available 24/7. Emergency repairs, installation, and maintenance for residential and commercial properties',
 
@@ -14,9 +14,12 @@ final heroIntroduction = {
 //NEW Updated SERVICES layout
 final services = [
   {'id': 'services_header', 'type': 'section_header', 'title': 'Our Services'},
+
+  // 1
   {
     'id': 'residential',
     'type': 'service',
+    'image': 'assets/images/image1.jpg',
     'title': 'Residential Garage Doors',
     'description':
         "From routine maintenance to emergency repairs, we keep your home's garage door running smoothly. Our team handles spring replacements, panel repairs, opener fixes, and more.",
@@ -26,16 +29,15 @@ final services = [
       'Panel & cable replacement',
       'Regular maintenance plans',
     ],
-    'images': ['assets/images/image1.jpg', 'assets/images/image2.jpg'],
   },
-
+  // 2
   {
     'id': 'commercial',
     'type': 'service',
-    'title': 'Commercial Garage Doors',
+    'image': 'assets/images/services/commercial_door.jpeg',
+    'title': 'Commercial Roll up Doors',
     'description':
         'Specializing in high-performance doors for warehouses, loading docks, and commercial facilities. We understand the importance of reliability and quick repairs.',
-    'images': ['assets/images/services/commercial_door.jpeg'],
     'bullets': [
       'High-speed door installation',
       '24/7 emergency repairs',
@@ -43,14 +45,29 @@ final services = [
       'Fleet garage door solutions',
     ],
   },
-
+  // 3
+  {
+    'id': 'automatic_gate',
+    'type': 'service',
+    'image': 'assets/images/services/gate_opener.jpeg',
+    'title': 'Automatic Gate Installation & Repair',
+    'description':
+        'We install, repair, and maintain automatic driveway gate systems for residential properties. Reliable access control and smooth operation every time.',
+    'bullets': [
+      'Sliding and swing gate openers',
+      'Keypad and remote control systems',
+      'Emergency manual override installation',
+      'Repair and troubleshooting service',
+    ],
+  },
+  // 4
   {
     'id': 'screen_doors',
     'type': 'service',
-    'title': 'Garage Screen Doors',
+    'image': 'assets/images/services/screen_door.jpeg',
+    'title': 'Lifestyle Screens',
     'description':
-        'Stay comfortable while enjoying fresh air and natural light. Our garage screen doors offer ventilation without compromising security or style.',
-    'images': ['assets/images/services/screen_door.jpeg'],
+        'Professional gate opener installation and repair for residential and commercial properties. Enhance security and convenience with reliable automated gate systems.',
     'bullets': [
       'Custom screen door installation',
       'Retractable screen options',
@@ -59,28 +76,14 @@ final services = [
     ],
   },
 
-  {
-    'id': 'gate_openers',
-    'type': 'service',
-    'title': 'Gate Openers',
-    'description':
-        'Professional gate opener installation and repair for residential and commercial properties. Enhance security and convenience with reliable automated gate systems.',
-    'images': ['assets/images/services/gate_opener.jpeg'],
-    'bullets': [
-      'Sliding and swing gate openers',
-      'Keypad and remote control systems',
-      'Emergency manual override installation',
-      'Repair and troubleshooting service',
-    ],
-  },
+  // 5
   {
     'id': 'fence',
     'type': 'service',
+    'image': 'assets/images/services/fence_door.jpeg',
     'title': 'Fence Services',
     'description':
         "Complete fence installation, repair, and maintenance services. We work with all fence types and materials to enhance your property's security and curb appeal.",
-    'images': ['assets/images/services/fence_door.jpeg'],
-
     'bullets': [
       'Fence installation and replacement',
       'Repair and post replacement',
@@ -88,6 +91,52 @@ final services = [
       'Staining and maintenance programs',
     ],
   },
+  // 6
+  {
+    'id': 'welding',
+    'type': 'service',
+    'image': 'assets/images/services/welding.jpeg',
+    'title': 'Welding Services',
+    'description':
+        'Professional welding and metal fabrication for gates, garage doors, frames, and custom repairs. Built for strength, safety, and long-lasting durability.',
+    'bullets': [
+      'Gate and frame welding repairs',
+      'Custom metal fabrication',
+      'Structural reinforcement work',
+      'On-site mobile welding service',
+    ],
+  },
+
+  // 7
+  {
+    'id': 'storefront',
+    'type': 'service',
+    'image': 'assets/images/services/commercialStoreFront.jpeg',
+    'title': 'Commercial Storefront Services',
+    'description':
+        'We install, repair, and maintain commercial storefront doors and systems. Secure, reliable solutions for businesses, warehouses, and retail properties.',
+    'bullets': [
+      'Glass & aluminum storefront door repair',
+      'Commercial overhead door installation',
+      'Lock, hinge, and hardware replacement',
+      'Emergency commercial repairs',
+    ],
+  },
+  // 8
+  {
+    'type': 'service',
+    'image': 'assets/images/services/boxTruckRllupDoor.jpeg',
+    'title': 'Box Truck Roll-Up Doors',
+    'description':
+        'We repair, replace, and install roll-up doors for box trucks and commercial fleet vehicles. Fast, durable service to keep your business moving.',
+    'bullets': [
+      'Roll-up door installation & replacement',
+      'Track and roller repair',
+      'Latch, lock, and handle repairs',
+      'Emergency fleet repairs',
+    ],
+  },
+
   {
     'id': 'work_section',
     'type': 'video_section',
@@ -101,8 +150,8 @@ final services = [
   {
     'id': 'repair_special',
     'type': 'special',
+    'title': 'Why Choose us',
     'bullets': [
-      'Why Choose Us',
       ' Live operators available 24/7 to answer all calls',
       ' Evening and weekend appointments available at no extra charge',
       ' Emergency garage door service when you need it most',

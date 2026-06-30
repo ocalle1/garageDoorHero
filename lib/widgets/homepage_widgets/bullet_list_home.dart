@@ -11,7 +11,7 @@ class BulletList extends StatelessWidget {
     return Column(
       children: bullets.map((item) {
         return Padding(
-          padding: const EdgeInsets.only(bottom: 8),
+          padding: const EdgeInsets.only(bottom: 16),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -21,15 +21,16 @@ class BulletList extends StatelessWidget {
                 height: 18,
               ),
 
-              const SizedBox(width: 8),
+              const SizedBox(width: 12),
 
               Expanded(
                 child: Text(
                   item,
-                  style: const TextStyle(
-                    fontSize: 20,
-                    height: 4.0,
+                  style: TextStyle(
+                    fontSize: 16,
+                    height: 1.4,
                     fontWeight: FontWeight.w400,
+                    color: Colors.grey[700],
                   ),
                 ),
               ),
