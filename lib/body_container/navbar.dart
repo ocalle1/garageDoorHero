@@ -187,7 +187,6 @@ class Navbar extends StatelessWidget {
                     final item = serviceItems[index];
 
                     return SizedBox(
-                      // height: double.infinity,
                       child: ServiceCard(
                         image: item['image']?.toString() ?? '',
                         title: item['title']?.toString() ?? '',
