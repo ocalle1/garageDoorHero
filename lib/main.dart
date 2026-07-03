@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'body_container/navbar.dart';
 // import 'widgets/body_container/container_1.dart';
 // import 'package:carousel_slider/carousel_slider.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
-  //runapp is the entry point of the Flutter application, it runs the MyApp widget which is the root of the widget tree
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
   runApp(const MyApp());
 }
 

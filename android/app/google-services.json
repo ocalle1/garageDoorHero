@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "409241423708",
+    "project_id": "garage-door-hero",
+    "storage_bucket": "garage-door-hero.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:409241423708:android:38459454e4b09414577b99",
+        "android_client_info": {
+          "package_name": "com.example.my_website"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnm8OVfRP3oSJ7vaDm29bpifVOzF8RzO4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

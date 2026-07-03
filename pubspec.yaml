@@ -39,6 +39,9 @@ dependencies:
   sticky_headers: ^0.3.0+2
   video_player: ^2.11.1
   flutter_svg: ^2.0.10
+  firebase_core: ^4.11.0
+  cloud_firestore: ^6.6.0
+  
 
 dev_dependencies:
   flutter_test:
@@ -69,6 +72,7 @@ flutter:
   assets:
     # - assets/
     - assets/images/
+    - assets/images/map/
     - assets/images/icons/
     - assets/images/footer_images/
     - assets/images/homepage_container4/

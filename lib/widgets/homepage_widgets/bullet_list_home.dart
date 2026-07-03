@@ -11,7 +11,7 @@ class BulletList extends StatelessWidget {
     return Column(
       children: bullets.map((item) {
         return Padding(
-          padding: const EdgeInsets.only(bottom: 16),
+          padding: const EdgeInsets.only(bottom: 36),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

@@ -1,16 +1,1 @@
-{
-  "hosting": {
-    "public": "build/web",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
-  }
-}
+{"hosting":{"public":"build/web","ignore":["firebase.json","**/.*","**/node_modules/**"],"rewrites":[{"source":"**","destination":"/index.html"}]},"flutter":{"platforms":{"android":{"default":{"projectId":"garage-door-hero","appId":"1:409241423708:android:38459454e4b09414577b99","fileOutput":"android/app/google-services.json"}},"ios":{"default":{"projectId":"garage-door-hero","appId":"1:409241423708:ios:d5dfca4560f9fb27577b99","uploadDebugSymbols":false,"fileOutput":"ios/Runner/GoogleService-Info.plist"}},"macos":{"default":{"projectId":"garage-door-hero","appId":"1:409241423708:ios:d5dfca4560f9fb27577b99","uploadDebugSymbols":false,"fileOutput":"macos/Runner/GoogleService-Info.plist"}},"dart":{"lib/firebase_options.dart":{"projectId":"garage-door-hero","configurations":{"android":"1:409241423708:android:38459454e4b09414577b99","ios":"1:409241423708:ios:d5dfca4560f9fb27577b99","macos":"1:409241423708:ios:d5dfca4560f9fb27577b99","web":"1:409241423708:web:0690ac39ca141152577b99","windows":"1:409241423708:web:404b3be9c2c26cbd577b99"}}}}}}

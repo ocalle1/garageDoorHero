@@ -1,12 +1,13 @@
 // import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:my_website/widgets/footer.dart';
 import 'package:my_website/widgets/homepage_widgets/services_title.dart';
 import 'package:my_website/widgets/sticky_contact_header.dart';
 import 'package:my_website/data/services.dart';
 import 'package:my_website/body_container/call_to_action_section.dart';
 import 'package:my_website/widgets/homepage_widgets/heroIntro.dart';
 import 'package:my_website/widgets/homepage_widgets/cards/service_card.dart';
+import 'package:my_website/widgets/homepage_widgets/free_quote/free_quote_section.dart';
+import 'package:my_website/widgets/homepage_widgets/review_section/review_section.dart';
 
 //CONTAINS the NAVBAR, SERVICES(BODY)gets data from services.dart, VIDEOS gets data from services.dart
 class Navbar extends StatelessWidget {
@@ -148,6 +149,7 @@ class Navbar extends StatelessWidget {
             ),
           ),
 
+          // Our Services title
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.only(top: 24, bottom: 12),
@@ -202,9 +204,10 @@ class Navbar extends StatelessWidget {
               },
             ),
           ),
+          // CONTAINS THE Free quote form + Service Area
+          SliverToBoxAdapter(child: FreeQuoteSection()),
 
-          SliverToBoxAdapter(child: CallToActionSection(data: callToAction)),
-          SliverToBoxAdapter(child: FooterSection(data: footerSection)),
+          SliverToBoxAdapter(child: ReviewsSection()),
         ],
       ),
     );
