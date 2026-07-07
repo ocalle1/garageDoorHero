@@ -1,10 +1,8 @@
-// import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:my_website/widgets/homepage_widgets/services_title.dart';
 import 'package:my_website/widgets/sticky_contact_header.dart';
 import 'package:my_website/data/services.dart';
-import 'package:my_website/body_container/call_to_action_section.dart';
-import 'package:my_website/widgets/homepage_widgets/heroIntro.dart';
+import 'package:my_website/widgets/homepage_widgets/hero_intro.dart';
 import 'package:my_website/widgets/homepage_widgets/cards/service_card.dart';
 import 'package:my_website/widgets/homepage_widgets/free_quote/free_quote_section.dart';
 import 'package:my_website/widgets/homepage_widgets/review_section/review_section.dart';
@@ -82,14 +80,14 @@ class Navbar extends StatelessWidget {
               IconButton(
                 icon: const Icon(Icons.phone, color: Colors.black, size: 30.0),
                 onPressed: () {
-                  print('Phone icon pressed');
+                  //print('Phone icon pressed');
                   // 951-498-7958;
                 },
               ),
               IconButton(
                 icon: const Icon(Icons.email, color: Colors.black, size: 30.0),
                 onPressed: () {
-                  print('garagedoorshero@gmail.com');
+                  // print('garagedoorshero@gmail.com');
                   // email address
                 },
               ),
@@ -100,7 +98,7 @@ class Navbar extends StatelessWidget {
                   size: 30.0,
                 ),
                 onPressed: () {
-                  print('#1066860');
+                  // print('#1066860');
                   // email address
                 },
               ),
@@ -195,7 +193,7 @@ class Navbar extends StatelessWidget {
                         description: item['description']?.toString() ?? '',
                         bullets: List<String>.from(item['bullets'] as List),
                         onPressed: () {
-                          print("Clicked: ${item['title']}");
+                          // print("Clicked: ${item['title']}");
                         },
                       ),
                     );

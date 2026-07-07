@@ -17,15 +17,16 @@ class ReviewCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 280,
+      width: 300,
       padding: const EdgeInsets.all(20),
+      margin: const EdgeInsets.symmetric(vertical: 10),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
         boxShadow: const [
           BoxShadow(
-            color: Colors.black12,
             blurRadius: 12,
+            color: Colors.black12,
             offset: Offset(0, 4),
           ),
         ],
@@ -44,22 +45,9 @@ class ReviewCard extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                decoration: BoxDecoration(
-                  color: source == "Google"
-                      ? Colors.blue.shade50
-                      : Colors.yellow.shade50,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Text(
-                  source,
-                  style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w600,
-                    color: source == "Google" ? Colors.blue : Colors.orange,
-                  ),
-                ),
+              Text(
+                source,
+                style: const TextStyle(fontSize: 12, color: Colors.grey),
               ),
             ],
           ),
@@ -77,7 +65,7 @@ class ReviewCard extends StatelessWidget {
             }),
           ),
 
-          const SizedBox(height: 12),
+          const SizedBox(height: 10),
 
           // Message
           Text(

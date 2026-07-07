@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class FreeQuoteForm extends StatefulWidget {
@@ -40,7 +39,7 @@ class _FreeQuoteFormState extends State<FreeQuoteForm> {
           borderRadius: BorderRadius.circular(12),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.2),
+              color: Colors.black.withValues(alpha: 0.4),
               blurRadius: 12,
               offset: const Offset(0, 6),
             ),
@@ -203,10 +202,24 @@ class _FreeQuoteFormState extends State<FreeQuoteForm> {
                           "timestamp": FieldValue.serverTimestamp(),
                         };
 
+                        // try {
+                        //   await firestore.collection("quotes").add(formData);
+
+                        //   if (!mounted) return;
+
+                        //   ScaffoldMessenger.of(context).showSnackBar(
+                        //     const SnackBar(
+                        //       content: Text("Request sent successfully!"),
+                        //     ),
+                        //   );
+                        final messenger = ScaffoldMessenger.of(context);
+
                         try {
                           await firestore.collection("quotes").add(formData);
 
-                          ScaffoldMessenger.of(context).showSnackBar(
+                          if (!mounted) return;
+
+                          messenger.showSnackBar(
                             const SnackBar(
                               content: Text("Request sent successfully!"),
                             ),
@@ -220,10 +233,13 @@ class _FreeQuoteFormState extends State<FreeQuoteForm> {
                           setState(() {
                             selectedService = null;
                           });
+                          // }
                         } catch (e) {
-                          ScaffoldMessenger.of(
-                            context,
-                          ).showSnackBar(SnackBar(content: Text("Error: $e")));
+                          if (!mounted) return;
+
+                          messenger.showSnackBar(
+                            SnackBar(content: Text("Error: $e")),
+                          );
                         }
                       },
 
