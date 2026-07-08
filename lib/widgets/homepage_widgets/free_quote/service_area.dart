@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//MAP OF AREA SERVICED
 class ServiceArea extends StatelessWidget {
   const ServiceArea({super.key});
 

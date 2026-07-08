@@ -61,12 +61,6 @@ class ServiceCard extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // Text(
-                      //   description,
-                      //   maxLines: 4,
-                      //   overflow: TextOverflow.ellipsis,
-                      //   style: TextStyle(fontSize: 15, color: Colors.grey[600]),
-                      // ),
                       const SizedBox(height: 20),
 
                       BulletList(bullets: bullets),

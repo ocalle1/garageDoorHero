@@ -202,16 +202,6 @@ class _FreeQuoteFormState extends State<FreeQuoteForm> {
                           "timestamp": FieldValue.serverTimestamp(),
                         };
 
-                        // try {
-                        //   await firestore.collection("quotes").add(formData);
-
-                        //   if (!mounted) return;
-
-                        //   ScaffoldMessenger.of(context).showSnackBar(
-                        //     const SnackBar(
-                        //       content: Text("Request sent successfully!"),
-                        //     ),
-                        //   );
                         final messenger = ScaffoldMessenger.of(context);
 
                         try {

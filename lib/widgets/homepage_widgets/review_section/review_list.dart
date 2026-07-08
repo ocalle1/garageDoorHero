@@ -23,8 +23,6 @@ class _ReviewListState extends State<ReviewList> {
 
   @override
   Widget build(BuildContext context) {
-    // final ScrollController scrollController = ScrollController();
-
     return Stack(
       alignment: Alignment.center,
       children: [
