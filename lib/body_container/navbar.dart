@@ -6,6 +6,7 @@ import 'package:my_website/widgets/homepage_widgets/hero_intro.dart';
 import 'package:my_website/widgets/homepage_widgets/cards/service_card.dart';
 import 'package:my_website/widgets/homepage_widgets/free_quote/free_quote_section.dart';
 import 'package:my_website/widgets/homepage_widgets/review_section/review_section.dart';
+import 'package:my_website/widgets/homepage_widgets/footer/footer.dart';
 
 //CONTAINS the NAVBAR, SERVICES(BODY)gets data from services.dart, VIDEOS gets data from services.dart
 class Navbar extends StatelessWidget {
@@ -204,8 +205,10 @@ class Navbar extends StatelessWidget {
           ),
           // CONTAINS THE Free quote form + Service Area
           SliverToBoxAdapter(child: FreeQuoteSection()),
-
+          // CONTAINS REVIEW SECTION
           SliverToBoxAdapter(child: ReviewsSection()),
+          // FOOTER
+          SliverToBoxAdapter(child: Footer()),
         ],
       ),
     );

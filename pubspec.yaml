@@ -73,10 +73,10 @@ flutter:
   assets:
     # - assets/
     - assets/images/
+    - assets/images/badges/
     - assets/images/map/
     - assets/images/icons/
     - assets/images/footer_images/
-    - assets/images/homepage_container4/
     - assets/images/services/
     - assets/videos/container3/
     
